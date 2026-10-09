@@ -1,0 +1,397 @@
+ChainPulse Architecture (Root: C:\Projects\ChainPulse)
+==================================================
+.
+├── .env
+├── .env.example
+├── .gitignore
+├── .vscode
+│   └── settings.json
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── alembic.ini
+├── app.py
+├── architecture_map.txt
+├── backend
+│   ├── __init__.py
+│   ├── ai
+│   │   ├── __init__.py
+│   │   ├── metrics
+│   │   │   ├── __init__.py
+│   │   │   └── ai_metrics.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   └── insight.py
+│   │   ├── prompts
+│   │   │   ├── __init__.py
+│   │   │   └── decision_prompts.py
+│   │   ├── providers
+│   │   │   ├── __init__.py
+│   │   │   ├── base_provider.py
+│   │   │   └── rule_provider.py
+│   │   └── services
+│   │       ├── __init__.py
+│   │       └── insight_service.py
+│   ├── api
+│   │   ├── __init__.py
+│   │   ├── dependencies.py
+│   │   ├── errors.py
+│   │   ├── middleware
+│   │   │   └── __init__.py
+│   │   ├── middleware.py
+│   │   ├── routes
+│   │   │   ├── __init__.py
+│   │   │   ├── ai.py
+│   │   │   ├── analytics.py
+│   │   │   ├── auth.py
+│   │   │   ├── bullwhip.py
+│   │   │   ├── data.py
+│   │   │   ├── decisions.py
+│   │   │   ├── demand.py
+│   │   │   ├── forecast.py
+│   │   │   ├── forecasting.py
+│   │   │   ├── forecasts.py
+│   │   │   ├── health.py
+│   │   │   ├── intelligence.py
+│   │   │   ├── inventory.py
+│   │   │   ├── organizations.py
+│   │   │   ├── products.py
+│   │   │   ├── scenario.py
+│   │   │   ├── scenarios.py
+│   │   │   ├── simulation.py
+│   │   │   ├── simulations.py
+│   │   │   └── suppliers.py
+│   │   └── schemas
+│   │       ├── __init__.py
+│   │       ├── ai.py
+│   │       ├── common.py
+│   │       ├── decisions.py
+│   │       ├── demand.py
+│   │       ├── forecasting.py
+│   │       ├── intelligence.py
+│   │       ├── inventory.py
+│   │       ├── organization.py
+│   │       ├── product.py
+│   │       ├── simulations.py
+│   │       └── suppliers.py
+│   ├── auth
+│   │   ├── __init__.py
+│   │   ├── authentication.py
+│   │   ├── config.py
+│   │   ├── dependencies.py
+│   │   ├── permissions.py
+│   │   ├── schemas.py
+│   │   └── security.py
+│   ├── data_ingestion
+│   │   ├── __init__.py
+│   │   ├── models.py
+│   │   ├── parsers
+│   │   │   ├── __init__.py
+│   │   │   └── csv_parser.py
+│   │   ├── services
+│   │   │   ├── __init__.py
+│   │   │   └── ingestion.py
+│   │   └── validators
+│   │       ├── __init__.py
+│   │       └── quality.py
+│   ├── database
+│   │   ├── __init__.py
+│   │   ├── database.py
+│   │   ├── migrations
+│   │   │   ├── .gitkeep
+│   │   │   ├── README
+│   │   │   ├── env.py
+│   │   │   ├── script.py.mako
+│   │   │   └── versions
+│   │   │       ├── ae14ba9d2a6a_add_user_authentication_fields.py
+│   │   │       ├── e044bb8cc159_initial_chainpulse_schema.py
+│   │   │       └── e2acc126a6ac_fix_user_password_hash_nullable.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── demand.py
+│   │   │   ├── forecast.py
+│   │   │   ├── inventory.py
+│   │   │   ├── organization.py
+│   │   │   ├── product.py
+│   │   │   ├── scenario.py
+│   │   │   ├── simulation.py
+│   │   │   ├── supplier.py
+│   │   │   └── user.py
+│   │   ├── repositories
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py
+│   │   │   ├── demand.py
+│   │   │   ├── forecast.py
+│   │   │   ├── inventory.py
+│   │   │   ├── organization.py
+│   │   │   ├── product.py
+│   │   │   ├── scenario.py
+│   │   │   ├── simulation.py
+│   │   │   ├── supplier.py
+│   │   │   └── user.py
+│   │   └── session.py
+│   ├── decision_engine
+│   │   ├── __init__.py
+│   │   ├── metrics
+│   │   │   ├── __init__.py
+│   │   │   └── decision_metrics.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   └── decision.py
+│   │   ├── rules
+│   │   │   ├── __init__.py
+│   │   │   └── decision_rules.py
+│   │   └── services
+│   │       ├── __init__.py
+│   │       └── decision_service.py
+│   ├── forecasting
+│   │   ├── __init__.py
+│   │   ├── core
+│   │   │   ├── __init__.py
+│   │   │   ├── exponential_smoothing.py
+│   │   │   └── moving_average.py
+│   │   ├── metrics
+│   │   │   ├── __init__.py
+│   │   │   └── forecast_metrics.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── exponential_smoothing.py
+│   │   │   ├── moving_average.py
+│   │   │   └── result.py
+│   │   └── services
+│   │       ├── __init__.py
+│   │       ├── forecast_service.py
+│   │       └── forecasting.py
+│   ├── ingestion
+│   │   ├── __init__.py
+│   │   ├── normalizers
+│   │   │   ├── __init__.py
+│   │   │   ├── demand.py
+│   │   │   └── inventory.py
+│   │   ├── parsers
+│   │   │   ├── __init__.py
+│   │   │   ├── csv_parser.py
+│   │   │   └── excel_parser.py
+│   │   ├── service.py
+│   │   └── validators
+│   │       ├── __init__.py
+│   │       ├── common.py
+│   │       ├── demand.py
+│   │       └── inventory.py
+│   ├── intelligence
+│   │   ├── __init__.py
+│   │   └── service.py
+│   ├── inventory
+│   │   ├── __init__.py
+│   │   ├── core
+│   │   │   ├── __init__.py
+│   │   │   └── optimizer.py
+│   │   ├── metrics
+│   │   │   ├── __init__.py
+│   │   │   └── inventory_metrics.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── inventory_calculator.py
+│   │   │   └── result.py
+│   │   └── services
+│   │       ├── __init__.py
+│   │       ├── inventory.py
+│   │       └── inventory_service.py
+│   ├── main.py
+│   ├── schemas
+│   │   ├── __init__.py
+│   │   ├── common.py
+│   │   ├── data.py
+│   │   ├── forecast.py
+│   │   ├── inventory.py
+│   │   ├── scenario.py
+│   │   └── simulation.py
+│   ├── services
+│   │   ├── __init__.py
+│   │   ├── ai_service.py
+│   │   ├── bullwhip_service.py
+│   │   ├── data_service.py
+│   │   ├── demand_service.py
+│   │   ├── forecast_service.py
+│   │   ├── inventory_service.py
+│   │   ├── organization_service.py
+│   │   ├── product_service.py
+│   │   ├── scenario_service.py
+│   │   ├── simulation_service.py
+│   │   └── supplier_service.py
+│   ├── simulation
+│   │   ├── __init__.py
+│   │   ├── metrics
+│   │   │   ├── __init__.py
+│   │   │   └── simulation_metrics.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   └── scenario.py
+│   │   └── services
+│   │       ├── __init__.py
+│   │       └── simulation_service.py
+│   ├── supplier_intelligence
+│   │   ├── __init__.py
+│   │   ├── metrics
+│   │   │   ├── __init__.py
+│   │   │   └── supplier_metrics.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   └── supplier_scorer.py
+│   │   └── services
+│   │       ├── __init__.py
+│   │       └── supplier_service.py
+│   └── workers
+│       └── __init__.py
+├── config
+│   ├── __init__.py
+│   ├── environments
+│   │   ├── development.env
+│   │   └── production.env
+│   └── settings.py
+├── core
+│   ├── __init__.py
+│   ├── ai
+│   │   ├── __init__.py
+│   │   ├── insights.py
+│   │   └── recommendations.py
+│   ├── analytics
+│   │   ├── __init__.py
+│   │   ├── metrics.py
+│   │   └── trends.py
+│   ├── bullwhip
+│   │   ├── __init__.py
+│   │   ├── calculator.py
+│   │   └── metrics.py
+│   ├── forecasting
+│   │   ├── __init__.py
+│   │   ├── engine.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── baseline.py
+│   │   │   ├── ml.py
+│   │   │   └── statistical.py
+│   │   └── preprocessing
+│   │       ├── __init__.py
+│   │       ├── cleaning.py
+│   │       └── features.py
+│   ├── inventory
+│   │   ├── __init__.py
+│   │   ├── policy.py
+│   │   ├── reorder_point.py
+│   │   └── safety_stock.py
+│   ├── optimization
+│   │   ├── __init__.py
+│   │   └── inventory_optimizer.py
+│   ├── scenario
+│   │   ├── __init__.py
+│   │   ├── engine.py
+│   │   └── presets.py
+│   └── simulation
+│       ├── __init__.py
+│       ├── agents
+│       │   ├── __init__.py
+│       │   ├── customer.py
+│       │   ├── manufacturer.py
+│       │   ├── retailer.py
+│       │   └── wholesaler.py
+│       ├── engine.py
+│       └── scenarios
+│           ├── __init__.py
+│           └── base.py
+├── data
+│   ├── exports
+│   │   └── .gitkeep
+│   ├── processed
+│   │   └── .gitkeep
+│   ├── raw
+│   │   └── .gitkeep
+│   └── sample
+│       └── .gitkeep
+├── deployments
+│   ├── cloud
+│   │   └── README.md
+│   ├── docker
+│   │   ├── Dockerfile
+│   │   └── docker-compose.yml
+│   └── nginx
+│       └── nginx.conf
+├── docs
+│   ├── api
+│   │   └── README.md
+│   ├── architecture
+│   │   └── README.md
+│   ├── deployment
+│   │   └── README.md
+│   └── product
+│       └── README.md
+├── frontend
+│   ├── assets
+│   │   └── .gitkeep
+│   ├── components
+│   │   └── README.md
+│   ├── streamlit
+│   │   ├── __init__.py
+│   │   └── app.py
+│   ├── styles
+│   │   └── README.md
+│   └── web
+│       └── README.md
+├── integrations
+│   ├── __init__.py
+│   ├── api
+│   │   ├── __init__.py
+│   │   └── client.py
+│   ├── erp
+│   │   ├── __init__.py
+│   │   └── connector.py
+│   ├── external
+│   │   └── __init__.py
+│   ├── files
+│   │   ├── __init__.py
+│   │   ├── csv_loader.py
+│   │   └── excel_loader.py
+│   └── wms
+│       ├── __init__.py
+│       └── connector.py
+├── logs
+│   └── .gitkeep
+├── map_architecture.py
+├── models
+│   ├── __init__.py
+│   ├── ai
+│   │   └── .gitkeep
+│   ├── forecasting
+│   │   └── .gitkeep
+│   └── optimization
+│       └── .gitkeep
+├── pyproject.toml
+├── requirements.txt
+├── scripts
+│   ├── data
+│   │   └── README.md
+│   ├── deployment
+│   │   └── README.md
+│   └── setup
+│       └── README.md
+├── storage
+│   ├── backups
+│   │   └── .gitkeep
+│   ├── exports
+│   │   └── .gitkeep
+│   └── uploads
+│       └── .gitkeep
+└── tests
+    ├── __init__.py
+    ├── api
+    │   └── .gitkeep
+    ├── core
+    │   └── .gitkeep
+    ├── e2e
+    │   └── .gitkeep
+    ├── fixtures
+    │   └── .gitkeep
+    ├── integration
+    │   └── .gitkeep
+    └── unit
+        └── .gitkeep

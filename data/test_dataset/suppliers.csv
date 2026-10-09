@@ -1,0 +1,5 @@
+supplier_code,name,lead_time_days,reliability_score
+SUP-001,TechSource India,7,0.96
+SUP-002,Digital Wholesale Hub,6,0.91
+SUP-003,Prime Components,10,0.88
+SUP-004,Office Essentials India,5,0.94

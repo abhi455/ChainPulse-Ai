@@ -1,0 +1,11 @@
+entity,sku,name,category,unit_cost,selling_price,lead_time_days,supplier_code,date,quantity,revenue,on_hand,reserved,safety_stock,reorder_point,stockout
+product,SKU-1001,Premium Wireless Headphones,Electronics,1800,3499,7,SUP-001,,,,,,,,
+product,SKU-1002,Bluetooth Speaker,Electronics,1200,2499,6,SUP-002,,,,,,,,
+product,SKU-1003,USB-C Fast Charger,Electronics,450,999,5,SUP-001,,,,,,,,
+product,SKU-1004,Mechanical Keyboard,Electronics,2200,4499,10,SUP-003,,,,,,,,
+product,SKU-1005,Wireless Mouse,Electronics,650,1499,7,SUP-002,,,,,,,,
+product,SKU-1006,Laptop Stand,Accessories,900,1999,8,SUP-003,,,,,,,,
+product,SKU-1007,Webcam HD,Electronics,1400,2999,9,SUP-001,,,,,,,,
+product,SKU-1008,Power Bank 20000mAh,Electronics,1100,2299,6,SUP-002,,,,,,,,
+product,SKU-1009,Desk Organizer,Office,350,899,5,SUP-004,,,,,,,,
+product,SKU-1010,LED Desk Lamp,Office,750,1699,7,SUP-004,,,,,,,,

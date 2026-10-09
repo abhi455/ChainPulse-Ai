@@ -1,0 +1,100 @@
+
+# Secrets and local environments
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local data, logs, and user uploads
+data/*.db
+backups/
+storage/uploads/
+storage/backups/
+logs/*.log
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and local environments
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local data, logs, and user uploads
+data/*.db
+backups/
+storage/uploads/
+storage/backups/
+logs/*.log
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and local environments
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local data, logs, and user uploads
+data/*.db
+backups/
+storage/uploads/
+storage/backups/
+logs/*.log
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and local environments
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local data, logs, and user uploads
+data/*.db
+backups/
+storage/uploads/
+storage/backups/
+logs/*.log
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and local environments
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local data, logs, and user uploads
+data/*.db
+backups/
+storage/uploads/
+storage/backups/
+logs/*.log
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
